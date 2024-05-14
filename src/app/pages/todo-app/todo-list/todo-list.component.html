@@ -1,0 +1,38 @@
+<header class="text-center grid grid-cols-1 gap-5">
+  <div>
+    <h1 class="text-4xl font-bold uppercase">
+      Todo List
+    </h1>
+    <p class="text-slate-600/70">
+      El total de tareas es: <span class="text-sky-500 font-bold">{{ total }}</span> y el total de tareas completadas es: <span class="text-sky-500 font-bold">{{ completed }}</span> y el total de tareas pendientes es: <span class="text-sky-500 font-bold">{{ pending }}</span>
+    </p>
+  </div>
+  <div class="flex justify-between items-center gap-5">
+    <input class="flex-1 relative block w-full appearance-none rounded-md border px-2.5 py-1.5 shadow-sm outline-none transition sm:text-sm border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 bg-gray-950" type="text" name="todoSearch" >
+    <a routerLink="/todo/create" class="px-5 h-fit py-1 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">
+      Crear
+    </a>
+  </div>
+</header>
+<main class="mt-4 border border-gray-700 h-[50vh]">
+  <ul class="grid grid-cols-1 gap-5 p-3 h-full overflow-y-scroll scroll-m-0">
+    @for (todo of todos; track todo.id){
+      <li class="group flex sm:flex-col md:flex-row justify-between items-center border border-gray-300 dark:border-gray-800 text-gray-900 gap-2 dark:text-gray-50 md:px-5 md:py-4 px-2 py-1">
+        <input class="rounded-full bg-gray-950" type="checkbox" />
+        <a routerLink="detail/{{todo.id}}" class="group-hover:cursor-pointer text-center w-fit text line-clamp-1">{{ todo.title }}</a>
+        <div class="gap-2 flex md:flex-row flex-col">
+          <a routerLink="update/{{todo.id}}" class="p-2 rounded-md border border-green-600 group text-green-700 bg-green-700/10">
+            <svg class="w-5 h-5 group-hover:text-inherit" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M14 4.182A4.136 4.136 0 0 1 16.9 3c1.087 0 2.13.425 2.899 1.182A4.01 4.01 0 0 1 21 7.037c0 1.068-.43 2.092-1.194 2.849L18.5 11.214l-5.8-5.71 1.287-1.31.012-.012Zm-2.717 2.763L6.186 12.13l2.175 2.141 5.063-5.218-2.141-2.108Zm-6.25 6.886-1.98 5.849a.992.992 0 0 0 .245 1.026 1.03 1.03 0 0 0 1.043.242L10.282 19l-5.25-5.168Zm6.954 4.01 5.096-5.186-2.218-2.183-5.063 5.218 2.185 2.15Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <button class="p-2 rounded-md border border-red-600 bg-red-600/10 active:border-red-600 group text-red-600">
+            <svg class="w-5 h-5 group-hover:text-inherit" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+      </li>
+    }
+  </ul>
+</main>
