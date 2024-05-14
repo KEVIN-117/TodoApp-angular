@@ -83,7 +83,19 @@ export class TodoServiceService {
   }
 
   updateTodo(todo: TodoDTO){
-    this.todos.set(this.todos().map(t => t.id === todo.id ? todo : t))
+
+  }
+
+  onCompleted(id: string){
+    this.todos.set(this.todos().map(todo => {
+      if(todo.id === id){
+        return {
+          ...todo,
+          completed: !todo.completed
+        }
+      }
+      return todo
+    }))
   }
 
   deleteTodoById(id: string){
@@ -102,4 +114,7 @@ export class TodoServiceService {
     return this.todos().filter(todo => !todo.completed).length
   }
 
+  handleSearch(search: string){
+    return this.todos().filter(todo => todo.title.toLowerCase().includes(search))
+  }
 }

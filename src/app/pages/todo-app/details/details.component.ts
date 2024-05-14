@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router"
 import {TodoServiceService} from "../../../services/todo-service.service";
 import {TodoDTO} from "../../../../types";
-import {routes} from "../../../app.routes";
 import {NgClass} from "@angular/common";
 
 @Component({

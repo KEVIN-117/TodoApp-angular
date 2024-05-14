@@ -1,0 +1,296 @@
+[debug] [2024-05-14T20:53:09.337Z] ----------------------------------------------------------------------
+[debug] [2024-05-14T20:53:09.340Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MSI\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-05-14T20:53:09.340Z] CLI Version:   13.7.3
+[debug] [2024-05-14T20:53:09.341Z] Platform:      win32
+[debug] [2024-05-14T20:53:09.341Z] Node Version:  v22.1.0
+[debug] [2024-05-14T20:53:09.341Z] Time:          Tue May 14 2024 16:53:09 GMT-0400 (hora de Bolivia)
+[debug] [2024-05-14T20:53:09.341Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-14T20:53:09.406Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-14T20:53:09.407Z] > authorizing via signed-in user (krodriguezcondori34@gmail.com)
+[debug] [2024-05-14T20:53:09.407Z] [iam] checking project todo-web-app-79f03 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-14T20:53:09.409Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions [none]
+[debug] [2024-05-14T20:53:09.409Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:09.409Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-14T20:53:10.483Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions 200
+[debug] [2024-05-14T20:53:10.483Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-14T20:53:10.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 [none]
+[debug] [2024-05-14T20:53:10.927Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 200
+[debug] [2024-05-14T20:53:10.928Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 {"projectId":"todo-web-app-79f03","projectNumber":"828563866905","displayName":"todo-web-app","name":"projects/todo-web-app-79f03","resources":{"hostingSite":"todo-web-app-79f03"},"state":"ACTIVE","etag":"1_17c31960-c38a-4441-833f-368386241463"}
+[info] 
+   Thank you for trying our early preview of Angular support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/angular
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 22, problems may be encountered. 
+[debug] [2024-05-14T20:53:43.868Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "todo-web-app-79f03",
+      "rewrites": [
+        {
+          "source": "/**",
+          "function": {
+            "functionId": "ssrtodowebapp79f03",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [],
+      "cleanUrls": true,
+      "i18n": {
+        "root": "/"
+      },
+      "public": ".firebase\\todo-web-app-79f03\\hosting",
+      "webFramework": "angular_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\todo-web-app-79f03\\functions",
+      "codebase": "firebase-frameworks-todo-web-app-79f03"
+    }
+  ]
+}
+[debug] [2024-05-14T20:53:43.869Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-14T20:53:43.870Z] > authorizing via signed-in user (krodriguezcondori34@gmail.com)
+[debug] [2024-05-14T20:53:43.870Z] [iam] checking project todo-web-app-79f03 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-05-14T20:53:43.871Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions [none]
+[debug] [2024-05-14T20:53:43.871Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:43.871Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-05-14T20:53:45.246Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions 200
+[debug] [2024-05-14T20:53:45.246Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'todo-web-app-79f03'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2024-05-14T20:53:45.252Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 [none]
+[debug] [2024-05-14T20:53:45.728Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 200
+[debug] [2024-05-14T20:53:45.728Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 {"projectId":"todo-web-app-79f03","projectNumber":"828563866905","displayName":"todo-web-app","name":"projects/todo-web-app-79f03","resources":{"hostingSite":"todo-web-app-79f03"},"state":"ACTIVE","etag":"1_17c31960-c38a-4441-833f-368386241463"}
+[info] i  functions: preparing codebase firebase-frameworks-todo-web-app-79f03 for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-05-14T20:53:45.732Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-14T20:53:45.732Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:45.733Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-05-14T20:53:45.733Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:45.734Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com [none]
+[debug] [2024-05-14T20:53:45.735Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:45.735Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com [none]
+[debug] [2024-05-14T20:53:45.736Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:46.878Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/runtimeconfig.googleapis.com 200
+[debug] [2024-05-14T20:53:46.879Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-05-14T20:53:46.892Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com 200
+[debug] [2024-05-14T20:53:46.892Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2024-05-14T20:53:46.893Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2024-05-14T20:53:46.893Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:46.940Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-14T20:53:46.940Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-05-14T20:53:47.072Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com 200
+[debug] [2024-05-14T20:53:47.072Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2024-05-14T20:53:47.073Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2024-05-14T20:53:47.073Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:47.549Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com:enable 200
+[debug] [2024-05-14T20:53:47.549Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2024-05-14T20:53:47.911Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com:enable 200
+[debug] [2024-05-14T20:53:47.911Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2024-05-14T20:53:57.552Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com [none]
+[debug] [2024-05-14T20:53:57.553Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:57.925Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com [none]
+[debug] [2024-05-14T20:53:57.925Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:53:58.740Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com 200
+[debug] [2024-05-14T20:53:58.740Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-05-14T20:53:59.126Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com 200
+[debug] [2024-05-14T20:53:59.126Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-05-14T20:53:59.127Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03/adminSdkConfig [none]
+[debug] [2024-05-14T20:53:59.594Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03/adminSdkConfig 200
+[debug] [2024-05-14T20:53:59.594Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03/adminSdkConfig {"projectId":"todo-web-app-79f03","storageBucket":"todo-web-app-79f03.appspot.com"}
+[debug] [2024-05-14T20:53:59.594Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/todo-web-app-79f03/configs [none]
+[debug] [2024-05-14T20:54:00.182Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/todo-web-app-79f03/configs 200
+[debug] [2024-05-14T20:54:00.182Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/todo-web-app-79f03/configs {}
+[debug] [2024-05-14T20:54:00.184Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-05-14T20:54:01.713Z] > [functions] package.json contents: {
+  "name": "todo-app",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "firebase-frameworks": "^0.11.0",
+    "firebase-functions": "^4.5.0",
+    "firebase-admin": "^11.11.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2024-05-14T20:54:01.713Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase firebase-frameworks-todo-web-app-79f03 to determine what to deploy 
+[debug] [2024-05-14T20:54:01.714Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-05-14T20:54:01.724Z] Found firebase-functions binary at 'C:\Users\MSI\profile\programing\Angular\TodoApp\.firebase\todo-web-app-79f03\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8514
+
+[debug] [2024-05-14T20:54:06.507Z] Got response from /__/functions.yaml {"endpoints":{"ssrtodowebapp79f03":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrtodowebapp79f03"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\todo-web-app-79f03\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\MSI\profile\programing\Angular\TodoApp\.firebase\todo-web-app-79f03\functions (861.5 KB) for uploading 
+[debug] [2024-05-14T20:54:11.700Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/todo-web-app-79f03/locations/-/functions [none]
+[debug] [2024-05-14T20:54:12.674Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/todo-web-app-79f03/locations/-/functions 200
+[debug] [2024-05-14T20:54:12.674Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/todo-web-app-79f03/locations/-/functions {}
+[debug] [2024-05-14T20:54:12.675Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-05-14T20:54:13.915Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/-/functions 200
+[debug] [2024-05-14T20:54:13.916Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-05-14T20:54:13.918Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com [none]
+[debug] [2024-05-14T20:54:13.918Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:13.920Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com [none]
+[debug] [2024-05-14T20:54:13.920Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:13.921Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/pubsub.googleapis.com [none]
+[debug] [2024-05-14T20:54:13.921Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/pubsub.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:13.922Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/storage.googleapis.com [none]
+[debug] [2024-05-14T20:54:13.923Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/storage.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:15.056Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com 200
+[debug] [2024-05-14T20:54:15.056Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2024-05-14T20:54:15.056Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com:enable [none]
+[debug] [2024-05-14T20:54:15.056Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com:enable x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:15.078Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/pubsub.googleapis.com 200
+[debug] [2024-05-14T20:54:15.078Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-05-14T20:54:15.123Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/storage.googleapis.com 200
+[debug] [2024-05-14T20:54:15.123Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-05-14T20:54:15.228Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com 200
+[debug] [2024-05-14T20:54:15.229Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2024-05-14T20:54:15.229Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com:enable [none]
+[debug] [2024-05-14T20:54:15.229Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:15.804Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com:enable 200
+[debug] [2024-05-14T20:54:15.804Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com:enable [omitted]
+[debug] [2024-05-14T20:54:15.911Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com:enable 200
+[debug] [2024-05-14T20:54:15.911Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2024-05-14T20:54:25.818Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com [none]
+[debug] [2024-05-14T20:54:25.819Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:25.927Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com [none]
+[debug] [2024-05-14T20:54:25.927Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:26.966Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com 200
+[debug] [2024-05-14T20:54:26.966Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-05-14T20:54:27.242Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com 200
+[debug] [2024-05-14T20:54:27.242Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/todo-web-app-79f03/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-05-14T20:54:27.243Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-05-14T20:54:27.244Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-05-14T20:54:27.858Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-05-14T20:54:27.859Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-828563866905@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"103885679392955749772"}}
+[debug] [2024-05-14T20:54:28.210Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-05-14T20:54:28.210Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/828563866905/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-828563866905@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"118298233088801967206"}}
+[debug] [2024-05-14T20:54:28.212Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 [none]
+[debug] [2024-05-14T20:54:28.660Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 200
+[debug] [2024-05-14T20:54:28.660Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-web-app-79f03 {"projectId":"todo-web-app-79f03","projectNumber":"828563866905","displayName":"todo-web-app","name":"projects/todo-web-app-79f03","resources":{"hostingSite":"todo-web-app-79f03"},"state":"ACTIVE","etag":"1_17c31960-c38a-4441-833f-368386241463"}
+[debug] [2024-05-14T20:54:28.661Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todo-web-app-79f03/versions [none]
+[debug] [2024-05-14T20:54:28.662Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todo-web-app-79f03/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"angular_ssr"}}
+[debug] [2024-05-14T20:54:30.584Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todo-web-app-79f03/versions 200
+[debug] [2024-05-14T20:54:30.584Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todo-web-app-79f03/versions {"name":"projects/828563866905/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"angular_ssr"}}
+[debug] [2024-05-14T20:54:30.585Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2024-05-14T20:54:30.585Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions [none]
+[debug] [2024-05-14T20:54:30.585Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions x-goog-quota-user=projects/todo-web-app-79f03
+[debug] [2024-05-14T20:54:30.585Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-05-14T20:54:31.917Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions 200
+[debug] [2024-05-14T20:54:31.917Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-web-app-79f03:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-05-14T20:54:31.917Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2024-05-14T20:54:31.918Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-05-14T20:54:34.078Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-05-14T20:54:34.079Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-828563866905-us-central1/5677150e-bafe-48f0-9c03-a2660780bea7.zip?GoogleAccessId=service-828563866905@gcf-admin-robot.iam.gserviceaccount.com&Expires=1715721874&Signature=Sq9NAm1%2Bc59I2isNcKsX2Gd8QujutlG%2BAonWP3lcGb7BO7j2y2YX5VRdSVvdRai9XadUVbJg7ZfZbKjKGMWJLpsH6zI02vt5DYYNXYTIB%2F6fA1gE1ydOL3PEXraONfDy%2Bbg%2BsdaS24IlrThacvtUoXkrVBP3etYq4iFYdGUNa%2BBnjIXz32GWpy13zRcavZjSCQtalL8XoC9imaRJA9jnHZ0FwTsYeY%2Bz29BAzdZTG1WcKVHIowbFjGJ9jHn1pgbtiB6Kl3F6ZGp9jllFXMMxBeRE8YM51f5XFRB6Uu%2BduAhFRXZ2JETxTy7z9OBdhgXI78%2BOanxQG1DPM%2F%2BQpk60fg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-828563866905-us-central1","object":"5677150e-bafe-48f0-9c03-a2660780bea7.zip"}}
+[debug] [2024-05-14T20:54:34.080Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-828563866905-us-central1/5677150e-bafe-48f0-9c03-a2660780bea7.zip GoogleAccessId=service-828563866905%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1715721874&Signature=Sq9NAm1%2Bc59I2isNcKsX2Gd8QujutlG%2BAonWP3lcGb7BO7j2y2YX5VRdSVvdRai9XadUVbJg7ZfZbKjKGMWJLpsH6zI02vt5DYYNXYTIB%2F6fA1gE1ydOL3PEXraONfDy%2Bbg%2BsdaS24IlrThacvtUoXkrVBP3etYq4iFYdGUNa%2BBnjIXz32GWpy13zRcavZjSCQtalL8XoC9imaRJA9jnHZ0FwTsYeY%2Bz29BAzdZTG1WcKVHIowbFjGJ9jHn1pgbtiB6Kl3F6ZGp9jllFXMMxBeRE8YM51f5XFRB6Uu%2BduAhFRXZ2JETxTy7z9OBdhgXI78%2BOanxQG1DPM%2F%2BQpk60fg%3D%3D
+[debug] [2024-05-14T20:54:34.080Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-828563866905-us-central1/5677150e-bafe-48f0-9c03-a2660780bea7.zip [stream]
+[debug] [2024-05-14T20:54:35.542Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-828563866905-us-central1/5677150e-bafe-48f0-9c03-a2660780bea7.zip 200
+[debug] [2024-05-14T20:54:35.542Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-828563866905-us-central1/5677150e-bafe-48f0-9c03-a2660780bea7.zip [omitted]
+[info] +  functions: .firebase\todo-web-app-79f03\functions folder uploaded successfully 
+[info] i  hosting[todo-web-app-79f03]: beginning deploy... 
+[info] i  hosting[todo-web-app-79f03]: found 8 files in .firebase\todo-web-app-79f03\hosting 
+[debug] [2024-05-14T20:54:35.551Z] [hosting] uploading with 200 concurrency
+[debug] [2024-05-14T20:54:35.552Z] [hosting] hash cache [LmZpcmViYXNlXHRvZG8td2ViLWFwcC03OWYwM1xob3N0aW5n] not populated
+[debug] [2024-05-14T20:54:35.572Z] [hosting] hash cache [LmZpcmViYXNlXHRvZG8td2ViLWFwcC03OWYwM1xob3N0aW5n] stored for 8 files
+[debug] [2024-05-14T20:54:35.572Z] [hosting][hash queue][FINAL] {"max":15,"min":4,"avg":6.625,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":18}
+[debug] [2024-05-14T20:54:35.573Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/828563866905/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab:populateFiles [none]
+[debug] [2024-05-14T20:54:35.573Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/828563866905/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab:populateFiles {"files":{"/index.html":"44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55","/styles-BRHV2PSD.css":"7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a","/todo/create/index.html":"7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627","/labs/index.html":"a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637","/polyfills-S3BTP7ME.js":"6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0","/todo/index.html":"6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8","/favicon.ico":"a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912","/main-SD57LOLB.js":"f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791"}}
+[debug] [2024-05-14T20:54:35.878Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/828563866905/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab:populateFiles 200
+[debug] [2024-05-14T20:54:35.878Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/828563866905/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab:populateFiles {"uploadRequiredHashes":["7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627","a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637","6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0","6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8","a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912","f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791","44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55","7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files"}
+[debug] [2024-05-14T20:54:35.879Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627 [none]
+[debug] [2024-05-14T20:54:35.879Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627 [stream]
+[debug] [2024-05-14T20:54:35.880Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637 [none]
+[debug] [2024-05-14T20:54:35.880Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637 [stream]
+[debug] [2024-05-14T20:54:35.881Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0 [none]
+[debug] [2024-05-14T20:54:35.881Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0 [stream]
+[debug] [2024-05-14T20:54:35.882Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8 [none]
+[debug] [2024-05-14T20:54:35.882Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8 [stream]
+[debug] [2024-05-14T20:54:35.883Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912 [none]
+[debug] [2024-05-14T20:54:35.883Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912 [stream]
+[debug] [2024-05-14T20:54:35.883Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791 [none]
+[debug] [2024-05-14T20:54:35.883Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791 [stream]
+[debug] [2024-05-14T20:54:35.884Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55 [none]
+[debug] [2024-05-14T20:54:35.884Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55 [stream]
+[debug] [2024-05-14T20:54:35.885Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a [none]
+[debug] [2024-05-14T20:54:35.885Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a [stream]
+[debug] [2024-05-14T20:54:35.886Z] [hosting][populate queue][FINAL] {"max":308,"min":308,"avg":308,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":315}
+[debug] [2024-05-14T20:54:35.886Z] [hosting] uploads queued: 8
+[debug] [2024-05-14T20:54:37.028Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0 200
+[debug] [2024-05-14T20:54:37.028Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6fbeb7d6eb25a044b40a09e863849957c69c69d9c44a0de999be46a2d28597b0 [stream]
+[debug] [2024-05-14T20:54:37.278Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627 200
+[debug] [2024-05-14T20:54:37.278Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7c3fa27c04a18bd5a9b78f2474b7d0b2100860c534bc69170121b3897e2a1627 [stream]
+[debug] [2024-05-14T20:54:37.549Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912 200
+[debug] [2024-05-14T20:54:37.549Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a905b13e228420df3dbe746dfb656d37a49736494c0737d00e007c8dc7319912 [stream]
+[debug] [2024-05-14T20:54:37.737Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8 200
+[debug] [2024-05-14T20:54:37.737Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/6327245634571fbc9f1c9c3139ff1613ca3ad106b54032a6aa929cb2d10e6ad8 [stream]
+[debug] [2024-05-14T20:54:37.785Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637 200
+[debug] [2024-05-14T20:54:37.785Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/a67ef508a1b06033f72f5b228c695127587a56a46be3da56bf999e957fb58637 [stream]
+[debug] [2024-05-14T20:54:37.855Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791 200
+[debug] [2024-05-14T20:54:37.855Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/f59e9e8a20dccd802debd417ede3dd848d010e14097a249a48a9180200d4e791 [stream]
+[debug] [2024-05-14T20:54:38.021Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55 200
+[debug] [2024-05-14T20:54:38.021Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/44c963d87a69c12a58d5144656ccecc2fabcc43c360b97b2e7b1139cd5397f55 [stream]
+[debug] [2024-05-14T20:54:38.076Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a 200
+[debug] [2024-05-14T20:54:38.076Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/todo-web-app-79f03/versions/a9e3dc813bbbb0ab/files/7f8671b0568928287aabb50810a84e49f1065493871ea5be6d14bf82b852502a [stream]
+[debug] [2024-05-14T20:54:38.076Z] [hosting][upload queue][FINAL] {"max":2197,"min":1149,"avg":1787.25,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":2198}
+[info] +  hosting[todo-web-app-79f03]: file upload complete 
+[debug] [2024-05-14T20:54:38.077Z] [hosting] deploy completed after 2534ms
+[info] i  functions: creating Node.js 20 (2nd Gen) function firebase-frameworks-todo-web-app-79f03:ssrtodowebapp79f03(us-central1)... 
+[debug] [2024-05-14T20:54:38.081Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions functionId=ssrtodowebapp79f03
+[debug] [2024-05-14T20:54:38.081Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions {"name":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrtodowebapp79f03","source":{"storageSource":{"bucket":"gcf-v2-uploads-828563866905-us-central1","object":"5677150e-bafe-48f0-9c03-a2660780bea7.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__NG_BROWSER_OUTPUT_PATH__":"dist/todo-app/browser","__FIREBASE_FRAMEWORKS_ENTRY__":"angular","FIREBASE_CONFIG":"{\"projectId\":\"todo-web-app-79f03\",\"storageBucket\":\"todo-web-app-79f03.appspot.com\"}","GCLOUD_PROJECT":"todo-web-app-79f03","EVENTARC_CLOUD_EVENT_SOURCE":"projects/todo-web-app-79f03/locations/us-central1/services/ssrtodowebapp79f03","FUNCTION_TARGET":"ssrtodowebapp79f03"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-todo-web-app-79f03","firebase-functions-hash":"b3d6275debe0fe799e129af8bc57cbbb2560956a"}}
+[debug] [2024-05-14T20:54:39.973Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions 200
+[debug] [2024-05-14T20:54:39.973Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/functions {"name":"projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-05-14T20:54:40.481622006Z","target":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-05-14T20:54:39.974Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d [none]
+[debug] [2024-05-14T20:54:40.921Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d 200
+[debug] [2024-05-14T20:54:40.922Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d {"name":"projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-05-14T20:54:40.481622006Z","target":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrtodowebapp79f03","source":{"storageSource":{"bucket":"gcf-v2-sources-828563866905-us-central1","object":"ssrtodowebapp79f03/function-source.zip","generation":"1715720080188876"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/todo-web-app-79f03/locations/us-central1/services/ssrtodowebapp79f03","timeoutSeconds":60,"environmentVariables":{"__NG_BROWSER_OUTPUT_PATH__":"dist/todo-app/browser","__FIREBASE_FRAMEWORKS_ENTRY__":"angular","FIREBASE_CONFIG":"{\"projectId\":\"todo-web-app-79f03\",\"storageBucket\":\"todo-web-app-79f03.appspot.com\"}","GCLOUD_PROJECT":"todo-web-app-79f03","EVENTARC_CLOUD_EVENT_SOURCE":"projects/todo-web-app-79f03/locations/us-central1/services/ssrtodowebapp79f03","FUNCTION_TARGET":"ssrtodowebapp79f03"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"828563866905-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-todo-web-app-79f03","firebase-functions-hash":"b3d6275debe0fe799e129af8bc57cbbb2560956a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-05-14T20:54:41.437Z] [create-firebase-frameworks-todo-web-app-79f03-us-central1-ssrtodowebapp79f03] Retrying task index 0
+[debug] [2024-05-14T20:54:41.437Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d [none]
+[debug] [2024-05-14T20:54:42.525Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d 200
+[debug] [2024-05-14T20:54:42.525Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d {"name":"projects/todo-web-app-79f03/locations/us-central1/operations/operation-1715720079554-6187035e037db-26a6377c-1030278d","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-05-14T20:54:40.481622006Z","target":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/todo-web-app-79f03/locations/us-central1/functions/ssrtodowebapp79f03","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrtodowebapp79f03","source":{"storageSource":{"bucket":"gcf-v2-sources-828563866905-us-central1","object":"ssrtodowebapp79f03/function-source.zip","generation":"1715720080188876"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"service":"projects/todo-web-app-79f03/locations/us-central1/services/ssrtodowebapp79f03","timeoutSeconds":60,"environmentVariables":{"__NG_BROWSER_OUTPUT_PATH__":"dist/todo-app/browser","__FIREBASE_FRAMEWORKS_ENTRY__":"angular","FIREBASE_CONFIG":"{\"projectId\":\"todo-web-app-79f03\",\"storageBucket\":\"todo-web-app-79f03.appspot.com\"}","GCLOUD_PROJECT":"todo-web-app-79f03","EVENTARC_CLOUD_EVENT_SOURCE":"projects/todo-web-app-79f03/locations/us-central1/services/ssrtodowebapp79f03","FUNCTION_TARGET":"ssrtodowebapp79f03"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"828563866905-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-todo-web-app-79f03","firebase-functions-hash":"b3d6275debe0fe799e129af8bc57cbbb2560956a"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
