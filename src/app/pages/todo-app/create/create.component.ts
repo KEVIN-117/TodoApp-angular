@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 import {TodoDTO, TodoFormDTO} from "../../../../types";
 import { Router } from '@angular/router'
 import {NgForOf, NgIf} from "@angular/common";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+import {catchError, tap} from "rxjs";
 
 @Component({
   selector: 'app-create',
@@ -53,6 +53,7 @@ export class CreateComponent {
     }),
   })
 
+
   constructor(private todoService: TodoServiceService, private router: Router) {
 
   }
@@ -65,14 +66,32 @@ export class CreateComponent {
       completed: false,
       description: data.description
     }
-    /*this.todoService.createTodo(todo)
-    if (this.todoForm.valid){
-      alert('Todo created successfully!')
-      this.router.navigate(['/todo'])
-    }else {
+    this.todoService.createTodo(todo).pipe(
+      tap((data)=>{
+        if (data){
+          alert('Todo created successfully!')
+          this.todoForm.reset()
+          this.router.navigate(['/todo'])
+        }
+      }),
+      catchError((error)=>{
+        alert('An error occurred while creating the todo!')
+        return error
+      })
+    ).subscribe()
 
-    }
-    this.todoForm.reset()*/
-    console.log()
+  }
+
+  onCancel(){
+    this.router.navigate(['/todo'])
+  }
+
+  onClear(){
+    this.todoForm.reset()
+  }
+
+  getError(){
+    this.todoForm.get('description')?.hasError('required')
+
   }
 }

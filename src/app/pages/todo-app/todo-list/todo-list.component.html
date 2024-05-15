@@ -41,11 +41,21 @@
         </li>
       }
     </ul>
-  } @else {
+  } @else if (todos.length === 0 && handleValue.value === ''){
+    <div class="flex flex-col justify-center items-center h-full gap-5">
+      <p class="text-gray-900 dark:text-gray-300">
+        No hay tareas, por favor crea una nueva tarea
+      </p>
+      <a routerLink="/todo/create" class="px-5 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">
+        Crear nueva tarea
+      </a>
+    </div>
+  }@else {
     <div class="flex justify-center items-center h-full">
       <p class="text-center text-gray-900 dark:text-gray-50">
         No hay tareas existentes con el nombre: <span class="text-sky-500 font-bold">{{ handleValue.value }}</span>
       </p>
+
     </div>
   }
 </main>

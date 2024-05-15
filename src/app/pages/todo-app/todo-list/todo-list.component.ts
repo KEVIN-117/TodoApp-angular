@@ -35,10 +35,12 @@ export class TodoListComponent {
   }
 
   ngOnInit(){
-    this.total = this.todoService.getTotal()
+    /*this.total = this.todoService.getTotal()
     this.completed = this.todoService.getTotalOnCompleted()
-    this.pending = this.todoService.getTotalOnPending()
-    this.todos = this.todoService.getTodos()
+    this.pending = this.todoService.getTotalOnPending()*/
+    this.todoService.getTodos().subscribe((todos)=>{
+      this.todos = todos
+    })
     this.handleValue.valueChanges.subscribe((value)=>{
       this.todos = this.todoService.handleSearch(value)
     })
