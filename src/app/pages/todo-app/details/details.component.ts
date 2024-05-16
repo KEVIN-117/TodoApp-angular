@@ -3,6 +3,7 @@ import {ActivatedRoute, RouterLink} from "@angular/router"
 import {TodoServiceService} from "../../../services/todo-service.service";
 import {TodoDTO} from "../../../../types";
 import {NgClass} from "@angular/common";
+import {catchError, tap} from "rxjs";
 
 @Component({
   selector: 'app-details',
@@ -16,20 +17,37 @@ import {NgClass} from "@angular/common";
 })
 export class DetailsComponent {
   private id: string = ''
+  protected todo: TodoDTO
   constructor(private route: ActivatedRoute, private todoService: TodoServiceService) {
-
+    this.todo = {
+      id: '',
+      key: '',
+      title: '',
+      description: '',
+      completed: false
+    }
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id']
     })
+    this.getTodo()
   }
 
-  getTodo(): TodoDTO{
-    return this.todoService.getTodoById(this.id) || {id: '', title: '', completed: false}
+  getTodo(){
+    this.todoService.getTodoById(this.id).pipe(
+      tap((todo: TodoDTO)=>{
+        this.todo = todo
+      }),
+      catchError((error)=>{
+        console.log(error)
+        return []
+      })
+    ).subscribe()
   }
   getClass() {
+
     return {
       'border-2': true,
       'rounded-xl': true,
@@ -38,12 +56,10 @@ export class DetailsComponent {
       'grid-cols-1': true,
       'gap-10': true,
       'shadow-xl': true,
-      'shadow-blue-700': this.getTodo().completed,
-      'shadow-red-700': !this.getTodo().completed,
-      'border-blue-600': this.getTodo().completed,
-      'bg-blue-600/20': this.getTodo().completed,
-      'border-red-600': !this.getTodo().completed,
-      'bg-red-600/20': !this.getTodo().completed
+      'shadow-blue-700': this.todo.completed,
+      'shadow-red-700': !this.todo.completed,
+      'border-blue-600': this.todo.completed,
+      'border-red-600': !this.todo.completed,
     };
   }
 }

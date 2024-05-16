@@ -1,14 +1,18 @@
-<div [className]="getTodo().completed? 'border-2 border-blue-600 rounded-xl py-10 px-5 shadow-xl shadow-blue-700 grid grid-cols-1 gap-10': 'grid grid-cols-1 gap-10 border-2 border-red-600 rounded-xl py-10 px-5 shadow-xl shadow-red-700'">
+<div [ngClass]="getClass()">
   <h1 [ngClass]="
-    getTodo().completed? 'md:text-5xl text-xl capitalize text-center text-sky-500 dark:text-sky-400/55 font-bold': 'md:text-5xl text-xl capitalize text-center text-red-500 dark:text-red-400/55'
-">{{getTodo().title}}</h1>
-  <p class="text-center md:text-3xl text-lg text-slate-700 dark:text-slate-500">{{getTodo().description}}</p>
+    todo.completed? 'md:text-5xl text-xl capitalize text-center text-sky-500 dark:text-sky-400/55 font-bold': 'md:text-5xl text-xl capitalize text-center text-red-500 dark:text-red-400/55'
+">{{todo.title}}</h1>
+  <p class="text-center md:text-3xl text-lg text-slate-700 dark:text-slate-500">{{todo.description}}</p>
 
   <div class="flex justify-center items-center gap-5">
-    <button class="px-5 w-32 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">Toggle</button>
-    <button class="px-5 w-32 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">Delete</button>
+    <button class="px-5 w-32 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">
+      Edit
+    </button>
+    <button class="px-5 w-32 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">
+      Delete
+    </button>
   </div>
   <a routerLink="/todo" class="text-center mx-auto px-5 w-32 py-2 rounded-md border border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 active:border-blue-600">
-    Reset
+    Back
   </a>
 </div>

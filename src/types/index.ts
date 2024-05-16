@@ -1,8 +1,9 @@
 interface Todo{
+    key?: string;
     id: string;
     title: string;
     completed: boolean;
-    description?: string;
+    description: string;
 }
 
 interface Event {

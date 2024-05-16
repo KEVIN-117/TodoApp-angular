@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {TodoServiceService} from "../../../services/todo-service.service";
-import {EventDTO, TodoDTO} from "../../../../types";
+import {TodoDTO} from "../../../../types";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgClass} from "@angular/common";
+import {catchError, tap} from "rxjs";
 
 @Component({
   selector: 'app-todo-list',
@@ -35,23 +36,27 @@ export class TodoListComponent {
   }
 
   ngOnInit(){
-    /*this.total = this.todoService.getTotal()
-    this.completed = this.todoService.getTotalOnCompleted()
-    this.pending = this.todoService.getTotalOnPending()*/
-    this.todoService.getTodos().subscribe((todos)=>{
-      this.todos = todos
-    })
+
     this.handleValue.valueChanges.subscribe((value)=>{
       this.todos = this.todoService.handleSearch(value)
     })
-    this.handleValueUpdate.valueChanges.subscribe((value)=>{
-      this.todoService.onCompleted(value)
-    })
+    this.getTodos()
+    this.total = this.todoService.getTotal()
+    this.completed = this.todoService.getTotalOnCompleted()
+    this.pending = this.todoService.getTotalOnPending()
   }
 
-  setCompleted(id: string){
-    this.handleValueUpdate.setValue(id)
-    this.updateAttributes()
+  setCompleted(todo: TodoDTO){
+    this.todoService.onCompleted(todo).pipe(
+      tap(()=>{
+        alert('Todo updated')
+        this.updateAttributes()
+      }),
+      catchError((error)=>{
+        alert('An error occurred')
+        return error
+      })
+    ).subscribe()
   }
 
   updateAttributes(){
@@ -59,5 +64,34 @@ export class TodoListComponent {
     this.completed = this.todoService.getTotalOnCompleted()
     this.pending = this.todoService.getTotalOnPending()
     this.handleValue.setValue('')
+    this.getTodos()
+  }
+
+  getTodos(){
+    this.todos = []
+    this.todoService.getTodos().subscribe((todos)=>{
+      for (let key in todos){
+        this.todos.push({
+          key: key,
+          ...todos[key]
+        })
+      }
+      this.todoService.setTodo(this.todos)
+    })
+  }
+
+  handleDelete(todo: TodoDTO){
+    if (todo.key){
+      this.todoService.deleteTodoById(todo.key).pipe(
+        tap(()=>{
+          alert('Todo deleted')
+          this.updateAttributes()
+        }),
+        catchError((error)=>{
+          alert('An error occurred')
+          return error
+        })
+      ).subscribe()
+    }
   }
 }
